@@ -1,0 +1,46 @@
+[tool.poetry]
+name = "predictions"
+version = "0.1.0"
+description = ""
+authors = ["Maxim Babikhin <babikhin@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "3.12.2"
+
+
+[tool.poetry.group.dev.dependencies]
+pre-commit = "^3.7.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+
+[tool.isort]
+profile = "black"
+py_version=312
+line_length=120
+skip = [
+'.eggs', '.git', '.hg', '.mypy_cache', '.nox', '.pants.d', '.tox',
+'.venv', '_build', 'buck-out', 'build', 'dist', 'node_modules', 'venv',
+]
+
+[tool.black]
+line_length=120
+exclude = '''
+(
+  /(
+      \.eggs         # exclude a few common directories in the
+    | \.git          # root of the project
+    | \.hg
+    | \.mypy_cache
+    | \.tox
+    | \.venv
+    | _build
+    | buck-out
+    | build
+    | dist
+  )/
+)
+'''
